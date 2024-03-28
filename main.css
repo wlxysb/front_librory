@@ -1,0 +1,246 @@
+/* Оформление панели */
+#side-checkbox {
+  display: none;
+  background-color: #000;
+}
+.side-panel {
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  left: -360px;
+  background: #333333;
+  transition: all 0.5s;   
+  width: 320px;
+  height: 100vh;
+  box-shadow: 10px 0 20px rgba(0,0,0,0.4);
+  color: #FFF;
+  padding: 40px 20px;
+}
+.side-title {
+  font-size: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #BFE2FF;
+}
+/* Оформление кнопки на странице */
+.side-button-1-wr {
+  text-align:left; /* Контейнер для кнопки, чтобы было удобнее ее разместить */
+  margin-left: 30px;
+}
+.side-button-1 {
+  display: inline-block;
+}
+/* .side-button-1 .side-b {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  margin: 10px;
+  text-decoration: none;
+  position: relative;
+  font-size: 15px;
+  line-height: 5px;
+  padding: 12px 10px;
+  color: #FFF;
+  font-weight: bold;
+  text-transform: uppercase; 
+  font-family: "Times New Roman", serif;
+  background: linear-gradient(to right, #ff105e, #ca0520);;
+  cursor: pointer; 
+  border: 2px solid #BFE2FF;
+} */
+.side-button-1 .side-b:hover,
+.side-button-1 .side-b:active,
+.side-button-1 .side-b:focus {
+  color: #FFF;
+}
+.side-button-1 .side-b:after,
+.side-button-1 .side-b:before {
+  position: absolute;
+  height: 4px;
+  left: 50%;
+  bottom: -6px;
+  content: "";
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+.side-button-1 .side-open:after,
+.side-button-1 .side-open:before {
+  background: green;
+}
+.side-button-1 .side-close:after,
+.side-button-1 .side-close:before {
+  background: red;
+}
+.side-button-1 .side-b:before {
+  top: -6px;
+}
+.side-button-1 .side-b:hover:after,
+.side-button-1 .side-b:hover:before {
+  width: 100%;
+  left: 0;
+}
+/* Переключатели кнопки 1 */
+.side-button-1 .side-close {
+  display: none;
+}
+#side-checkbox:checked + .side-panel + .side-button-1-wr .side-button-1 .side-open {
+  display: none;
+}
+#side-checkbox:checked + .side-panel + .side-button-1-wr .side-button-1 .side-close {
+  display: block;
+}
+#side-checkbox:checked + .side-panel {
+  left: 0;
+}
+/* Оформление кнопки на панеле */
+.side-button-2 {
+  font-size: 30px;
+  border-radius: 20px;
+  position: absolute;
+  z-index: 1;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  transform: rotate(45deg);
+  color: #BFE2FF;    
+  transition: all 280ms ease-in-out;    
+}
+.side-button-2:hover {
+  transform: rotate(45deg) scale(1.1);    
+  color: #FFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  background-repeat: no-repeat; 
+        background-size: cover; 
+  background-color: #333333;
+  padding: 10px;
+  color: #fff;
+  position: relative;
+}
+
+#menuButton {
+  cursor: pointer;
+  padding: 10px;
+}
+
+#searchBox {
+  margin: 0 50px;
+  margin-left: 50px;
+}
+
+#searchBox input[type="text"] {
+  
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+}
+
+#links a {
+  margin-left: 50px;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#popupPanel {
+  background-color: #000;
+  color: #fff;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+}
+
+#popupPanel.show {
+  display: block;
+}
+
+#popupPanel a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+  margin: 50px;
+  text-align: center;
+  margin-inline-start: 30px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  transform: scale(1.5);
+  /* Закругление всех углов с различными радиусами */
+
+  
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="regist.css">
+  
+  <link rel="stylesheet" href="main.css">
+  <title>Регистрация</title>
+</head>
+
+
+<body>
+
+
+  <header >
+    <input type="checkbox" id="side-checkbox" />
+                      <div class="side-panel">
+                          <label class="side-button-2" for="side-checkbox">+</label>    
+                          <div class="side-title">Фильтры:</div>
+                          
+  
+                            <div class="container">
+                              <div class="dropdown" onmouseover="showDropdown1()" onmouseout="hideDropdown1()">
+                                <span>Жанры</span>
+                                <div class="dropdown-content" id="myDropdown1">
+                                  <a href="#">Эпос</a>
+                                  <a href="#">Драма</a>
+                                  <a href="#">Лирика</a>
+                                </div>
+                              </div>
+                            </div>
+  
+                            <div class="container">
+                              <div class="dropdown" onmouseover="showDropdown2()" onmouseout="hideDropdown2()">
+                                <span>Авторы</span>
+                                <div class="dropdown-content" id="myDropdown2">
+                                  <a href="#">Пушкин</a>
+                                  <a href="#">Тургенев</a>
+                                  <a href="#">Онегин</a>
+                                </div>
+                              </div>
+                            </div>
+                      </div>
+                      <div class="side-button-1-wr">
+                          <label class="side-button-1" for="side-checkbox">
+                              <div class="side-b side-open">ФИЛЬТРЫ</div>
+                              <div class="side-b side-close">ФИЛЬТРЫ</div>
+                          </label>
+                      </div>
+  
+    <div id="searchBox">
+      <input type="text" placeholder="Поиск">
+    </div>
+    <div id="links">
+      <a href="login.html">АККАУНТ</a>
+      <a href="main.html">ГЛАВНАЯ</a>
+    </div>
+  </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="registration">
+		<div class="registration-screen">
+			<div class="app-title">
+				<h1>Регистрация</h1>
+			</div>
+
+			<div class="registration-form">
+				<div class="control-group">
+				<input type="text" class="registration-field" value="" placeholder="ФИО" id="registration-name">
+				<label class="registration-field-icon fui-user" for="registration-name"></label>
+				</div>
+
+
+        <div class="control-group">
+          <input type="text" class="registration-field" value="" placeholder="Пароль" id="registration-password">
+          <label class="registration-field-icon fui-lock" for="registration-password"></label>
+        </div>
+
+
+        <div class="element1">
+          <select name="класс" id="класс">
+            <option value="Не выбрано">Не выбрано</option>
+            <option value="1А">1Б</option>
+            <option value="1Б">1Б</option>
+            <option value="2А">2Б</option>
+            <option value="2Б">2Б</option>
+            <option value="2А">2А</option>
+            <option value="3Б">3Б</option>
+            <option value="4А">4А</option>
+            <option value="4Б">4Б</option>
+            <option value="5А">5А</option>
+            <option value="5Б">5Б</option>
+            <option value="6А">6А</option>
+            <option value="6Б">6Б</option>
+            <option value="7А">7А</option>
+            <option value="7Б">7Б</option>
+            <option value="8А">8А</option>
+            <option value="8Б">8Б</option>
+            <option value="9А">9А</option>
+            <option value="9Б">9Б</option>
+            <option value="10А">10А</option>
+            <option value="10Б">10Б</option>
+            <option value="11А">11А</option>
+            <option value="11Б">11Б</option>
+          </select>
+        </div>
+
+				<a class="btn btn-primary btn-large btn-block" href="#">ВОЙТИ</a>
+        <div class="login">
+          <a href="login.html">Войти</a>
+        </div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+  <script>
+    function showDropdown1() {
+    document.getElementById("myDropdown1").style.display = "block";
+  }
+  
+  function hideDropdown1() {
+    document.getElementById("myDropdown1").style.display = "none";
+  }
+
+  function showDropdown2() {
+    document.getElementById("myDropdown2").style.display = "block";
+  }
+  
+  function hideDropdown2() {
+    document.getElementById("myDropdown2").style.display = "none";
+  }
+  
+  </script>
+
+
+
+</body>
