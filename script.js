@@ -1,34 +1,47 @@
+// import {useState} from 'rect'
+// import {useEffect} from 'rect'
 
-    async function getResponse(url){
-    let response = await fetch(url);
-    let content = await response.json();
 
-    var list = document.getElementById("myList");
+// const [item, setItem] = useState("")
+// useEffect(() => {
+//     console.log(localStorage.getItem("token"))
+//     setItem(localStorage.getItem("token"))
+// }, [])
 
-    content.forEach(function(b) {
-        var listItem = document.createElement("li");
-        listItem.className = 'card'; // Устанавливаем класс для элемента списка
-    listItem.innerHTML = `
-    <div class="product-item">
-    <a href="show_book" id="book${b.id}" class="book-link">
-        <img id="img" src="${b.image}" style="height: 65%; width: 65%;">
-    </a>
-        <div class="product-list">
-            <h3>${b.name}</h3>
-                <span class="price">${b.year}</span>
-                <a href="" class="button">Забронировать</a>
-        </div>
-    </div>
-    `;
-        list.appendChild(listItem);
+const form = document.getElementById('registration-screenn')
+form.addEventListener('submit', async function (event) {
+    event.preventDefault();
 
-        var book_id= document.getElementById(`book${b.id}`);
-        console.log(book_id);
 
-        });
-}  
-getResponse('http://localhost:8086/books');
+    const formData = new FormData(form);
+    const jsonData = {};
 
+    formData.forEach((value, key) => {
+        jsonData[key] = value;
+    });
+
+    const url = 'http://localhost:5252/registration';
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(jsonData)
+    }
+    console.log(jsonData)
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error('Ошибка запроса: ' + response.status);
+        }
+        const responseData = await response.json();
+        console.log('Ответ от сервера:', responseData);
+        location.href = 'main.html'
+    } catch (error) {
+        console.error('Ошибка:', error);
+    }
+}
+);
 
 
 

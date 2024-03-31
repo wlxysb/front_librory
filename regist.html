@@ -75,26 +75,26 @@
 
 
 	<div class="registration">
-		<div class="registration-screen">
+		<form class="registration-screen" id="registration-screenn">
 			<div class="app-title">
 				<h1>Регистрация</h1>
 			</div>
 
 			<div class="registration-form">
 				<div class="control-group">
-				<input type="text" class="registration-field" value="" placeholder="ФИО" id="registration-name">
+				<input type="text" class="registration-field" name="username" placeholder="ФИО" id="registration-name">
 				<label class="registration-field-icon fui-user" for="registration-name"></label>
 				</div>
 
 
         <div class="control-group">
-          <input type="text" class="registration-field" value="" placeholder="Пароль" id="registration-password">
+          <input type="text" class="registration-field" name="password" placeholder="Пароль" id="registration-password">
           <label class="registration-field-icon fui-lock" for="registration-password"></label>
         </div>
 
 
         <div class="element1">
-          <select name="класс" id="класс">
+          <select name="class_number" id="class_number">
             <option value="Не выбрано">Не выбрано</option>
             <option value="1А">1Б</option>
             <option value="1Б">1Б</option>
@@ -121,7 +121,7 @@
           </select>
         </div>
 
-				<a class="btn btn-primary btn-large btn-block" href="#">ВОЙТИ</a>
+				<button class="btn btn-primary btn-large btn-block">ВОЙТИ</button>
         <div class="login">
           <a href="login.html">Войти</a>
         </div>
@@ -153,7 +153,5 @@
   }
   
   </script>
-
-
-
+  <script src="script.js"></script>
 </body>
