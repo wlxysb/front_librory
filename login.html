@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <head>
   <meta charset="UTF-8">
 
   <link rel="stylesheet" href="login.css">
-  
+
   <link rel="stylesheet" href="main.css">
   <title>Логин</title>
 </head>
@@ -12,53 +13,53 @@
 <body>
 
 
-  <header >
+  <header>
     <input type="checkbox" id="side-checkbox" />
-                      <div class="side-panel">
-                          <label class="side-button-2" for="side-checkbox">+</label>    
-                          <div class="side-title">Фильтры:</div>
-                          
-  
-  
-  
-  
-  
-  
-                          <div class="container">
-                              <div class="dropdown" onmouseover="showDropdown1()" onmouseout="hideDropdown1()">
-                                <span>Жанры</span>
-                                <div class="dropdown-content" id="myDropdown1">
-                                  <a href="#">Эпос</a>
-                                  <a href="#">Драма</a>
-                                  <a href="#">Лирика</a>
-                                </div>
-                              </div>
-                            </div>
-  
-                            <div class="container">
-                              <div class="dropdown" onmouseover="showDropdown2()" onmouseout="hideDropdown2()">
-                                <span>Авторы</span>
-                                <div class="dropdown-content" id="myDropdown2">
-                                  <a href="#">Пушкин</a>
-                                  <a href="#">Тургенев</a>
-                                  <a href="#">Онегин</a>
-                                </div>
-                              </div>
-                            </div>
-  
-  
-  
-  
-  
-  
-                      </div>
-                      <div class="side-button-1-wr">
-                          <label class="side-button-1" for="side-checkbox">
-                              <div class="side-b side-open">ФИЛЬТРЫ</div>
-                              <div class="side-b side-close">ФИЛЬТРЫ</div>
-                          </label>
-                      </div>
-  
+    <div class="side-panel">
+      <label class="side-button-2" for="side-checkbox">+</label>
+      <div class="side-title">Фильтры:</div>
+
+
+
+
+
+
+
+      <div class="container">
+        <div class="dropdown" onmouseover="showDropdown1()" onmouseout="hideDropdown1()">
+          <span>Жанры</span>
+          <div class="dropdown-content" id="myDropdown1">
+            <a href="#">Эпос</a>
+            <a href="#">Драма</a>
+            <a href="#">Лирика</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="dropdown" onmouseover="showDropdown2()" onmouseout="hideDropdown2()">
+          <span>Авторы</span>
+          <div class="dropdown-content" id="myDropdown2">
+            <a href="#">Пушкин</a>
+            <a href="#">Тургенев</a>
+            <a href="#">Онегин</a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+    </div>
+    <div class="side-button-1-wr">
+      <label class="side-button-1" for="side-checkbox">
+        <div class="side-b side-open">ФИЛЬТРЫ</div>
+        <div class="side-b side-close">ФИЛЬТРЫ</div>
+      </label>
+    </div>
+
     <div id="searchBox">
       <input type="text" placeholder="Поиск">
     </div>
@@ -68,50 +69,49 @@
     </div>
   </header>
 
-	<!-- <div class="login">
-		<form class="login-screen" id="login-screenn">
-			<div class="app-title">
-				<h1>Вход</h1>
-			</div>
+  <div class="login">
+    <form class="login-screen" id="login-screenn">
+      <div class="app-title">
+        <h1>Вход</h1>
+      </div>
 
-			<div class="login-form">
-				<div class="control-group">
-				<input type="text" class="login-field" name="username" placeholder="ФИО" id="login-name">
-				<label class="login-field-icon fui-user" for="login-name"></label>
-				</div>
+      <div class="login-form">
+        <div class="control-group">
+          <input type="text" class="login-field" name="username" placeholder="Имя Фамилия">
+          <label class="login-field-icon fui-user" for="login-name"></label>
+        </div>
 
 
         <div class="control-group">
-          <input type="text" class="login-field" name="password" placeholder="Пароль" id="login-password">
+          <input type="text" class="login-field" name="password" placeholder="Пароль">
           <label class="login-field-icon fui-lock" for="login-password"></label>
         </div>
 
 
-				<button  class="btn btn-primary btn-large btn-block"">ВОЙТИ</button>
+        <button class="btn btn-primary btn-large btn-block">ВОЙТИ</button>
         <div class="registration">
           <a href="regist.html">Зарегистрироваться</a>
         </div>
-			</div>
-		</div>
-	</div> -->
-  
+      </div>
+    </form>
+  </div>
+
   <script>
     function showDropdown1() {
-    document.getElementById("myDropdown1").style.display = "block";
-  }
-  
-  function hideDropdown1() {
-    document.getElementById("myDropdown1").style.display = "none";
-  }
+      document.getElementById("myDropdown1").style.display = "block";
+    }
 
-  function showDropdown2() {
-    document.getElementById("myDropdown2").style.display = "block";
-  }
-  
-  function hideDropdown2() {
-    document.getElementById("myDropdown2").style.display = "none";
-  }
-  
+    function hideDropdown1() {
+      document.getElementById("myDropdown1").style.display = "none";
+    }
+
+    function showDropdown2() {
+      document.getElementById("myDropdown2").style.display = "block";
+    }
+
+    function hideDropdown2() {
+      document.getElementById("myDropdown2").style.display = "none";
+    }
   </script>
   <script src="signin.js"></script>
 

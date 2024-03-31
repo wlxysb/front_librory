@@ -1,12 +1,3 @@
-// import {useState} from 'rect'
-// import {useEffect} from 'rect'
-
-
-// const [item, setItem] = useState("")
-// useEffect(() => {
-//     console.log(localStorage.getItem("token"))
-//     setItem(localStorage.getItem("token"))
-// }, [])
 
 const form = document.getElementById('registration-screenn')
 form.addEventListener('submit', async function (event) {
@@ -36,7 +27,6 @@ form.addEventListener('submit', async function (event) {
         }
         const responseData = await response.json();
         console.log('Ответ от сервера:', responseData);
-        location.href = 'main.html'
     } catch (error) {
         console.error('Ошибка:', error);
     }
