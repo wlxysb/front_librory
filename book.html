@@ -1,198 +1,106 @@
 <!DOCTYPE html>
+
 <head>
   <meta charset="UTF-8">
 
-  
-  <link rel="stylesheet" href="main.css">
+
+  <link rel="stylesheet" href="./styles/main.css">
   <title>Библиотека</title>
 </head>
+
 <body>
 
-  <header >
+  <header>
     <input type="checkbox" id="side-checkbox" />
-                      <div class="side-panel">
-                          <label class="side-button-2" for="side-checkbox">+</label>    
-                          <div class="side-title">Фильтры:</div>
-                          
-  
-  
-  
-  
-  
-  
-                          <div class="container">
-                              <div class="dropdown" onmouseover="showDropdown1()" onmouseout="hideDropdown1()">
-                                <span>Жанры</span>
-                                <div class="dropdown-content" id="myDropdown1">
-                                  <a href="#">Эпос</a>
-                                  <a href="#">Драма</a>
-                                  <a href="#">Лирика</a>
-                                </div>
-                              </div>
-                            </div>
-  
-                            <div class="container">
-                              <div class="dropdown" onmouseover="showDropdown2()" onmouseout="hideDropdown2()">
-                                <span>Авторы</span>
-                                <div class="dropdown-content" id="myDropdown2">
-                                  <a href="#">Пушкин</a>
-                                  <a href="#">Тургенев</a>
-                                  <a href="#">Онегин</a>
-                                </div>
-                              </div>
-                            </div>
-  
-  
-  
-  
-  
-  
-                      </div>
-                      <div class="side-button-1-wr">
-                          <label class="side-button-1" for="side-checkbox">
-                              <div class="side-b side-open">ФИЛЬТРЫ</div>
-                              <div class="side-b side-close">ФИЛЬТРЫ</div>
-                          </label>
-                      </div>
-  
-    <div id="searchBox">
-      <input type="text" placeholder="Поиск">
-    </div>
+
+    <form id="searchBox">
+      <input id="search" type="text" name="book_name" placeholder="Поиск">
+    </form>
+    
     <div id="links">
       <a href="login.html">АККАУНТ</a>
       <a href="main.html">ГЛАВНАЯ</a>
     </div>
   </header>
-  <script>
-      function showDropdown1() {
-      document.getElementById("myDropdown1").style.display = "block";
-    }
-    
-    function hideDropdown1() {
-      document.getElementById("myDropdown1").style.display = "none";
-    }
-  
-    function showDropdown2() {
-      document.getElementById("myDropdown2").style.display = "block";
-    }
-    
-    function hideDropdown2() {
-      document.getElementById("myDropdown2").style.display = "none";
-    }
-    
-    </script>
 
+  <div class="inline">
+    <div id="framed-photo" class="gol">
+      <img src=" " class="framed-photo">
+    </div>
 
+    <p id="opisanie" class="opisanie">
 
-
-
-
-
-
-<div class="inline">
-  <div class="gol" >
-    <img src="отцы и дети.jpg"Описание изображения" class="framed-photo">
+    </p>
   </div>
 
-    <p class ="opisanie">Роман И. С. Тургенева, написанный в 1860-1861 годах и опубликованный в 1862 году в журнале «Русский вестник». В обстановке «великих реформ» книга стала сенсацией и привлекла к себе всеобщее внимание, а образ главного героя Евгения Базарова был воспринят как воплощение нового, пореформенного поколения, став примером для подражания молодёжи 1860-х гг. Свойственные Базарову бескомпромиссность, отсутствие преклонения перед авторитетами и старыми истинами, приоритет полезного над прекрасным стали идеалами первого поколения пореформенной интеллигенции.</p>
-  </div>
+  <div id="characteristic" class="harakteristika">
 
-  <div class="harakteristika">
-    <p>Жанр: Роман</p>
-    <p>Автор: И.С.Тургенев</p>
-    <p>Год издания: 1862 г.</p>
-    <p>Кол-во в наличии: 30</p>
   </div>
 
   <div class="bronirovat">
-    <h3>Отцы и дети</h3>
+    <h3 id="book"></h3>
     <hr>
-    <button>Бронировать</button>
+    <button id="bookAbook">Бронировать</button>
   </div>
+  </div>
+  <script src="./jss/book.js"></script>
 
-</div>
+  <style>
+    .framed-photo {
+      border-radius: 10px;
+      height: 500px;
+      margin-top: 30px;
+      margin-left: 90px;
+      box-shadow: 0 0 0 5px #000000;
+    }
 
-<style>
-  
-</style>
-<style>
+    .opisanie {
+      margin-left: 80px;
+      margin-top: 30px;
+      display: inline-block;
+      border: 2px solid black;
+      /* Устанавливаем рамку блока */
+      padding: 5px;
+      height: 40%;
+      width: 40%;
+      border-radius: 10px;
+      padding: 15px;
+    }
 
+    .inline {
+      display: flex;
+    }
 
-.framed-photo{
-  border-radius: 10px;
-  height: 500px;
-  margin-top: 30px;
-  margin-left: 90px;
-  box-shadow: 0 0 0 5px #000000;
-}
+    .framed-photo .opisanie {
+      flex: 1;
+    }
 
-.opisanie{
-  margin-left: 80px;
-  margin-top: 30px;
-  display: inline-block;
-  border: 2px solid black; /* Устанавливаем рамку блока */
-  padding: 5px;
-  height: 40%;
-  width: 40%;
-  border-radius: 10px;
-  padding: 15px;
-}
+    .harakteristika {
+      margin-left: 485px;
+      margin-top: -250px;
+      border: 2px solid black;
+      border-radius: 10px;
+      padding: 15px;
+      width: 20%;
+    }
 
-.inline{
-  display: flex;
-}
+    .bronirovat {
+      margin-left: 850px;
+      margin-top: -185px;
+      border-radius: 10px;
+      padding: 10px;
+      width: 15%;
+    }
 
-.framed-photo .opisanie {
-  flex: 1;
-}
-
-.harakteristika {
-  margin-left: 485px;
-  margin-top: -250px;
-  border: 2px solid black;
-  border-radius:10px ;
-  padding: 15px;
-  width: 20%;
-}
-
-.bronirovat{
-  margin-left: 850px;
-  margin-top: -185px;
-  border-radius:10px ;
-  padding: 10px;
-  width: 15%;
-}
-
-button {
-  background:#333333; /* Изменяем цвет фона на оранжевый */
-  color: white; /* Цвет текста на кнопке на белый */
-  padding: 15px 40px; /* Увеличиваем размеры кнопки по горизонтали и вертикали */
-  border-radius: 10px; /* Закругляем углы кнопки */
-  border: none; /* Убираем границу кнопки */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    button {
+      background: #333333;
+      /* Изменяем цвет фона на оранжевый */
+      color: white;
+      /* Цвет текста на кнопке на белый */
+      padding: 15px 40px;
+      /* Увеличиваем размеры кнопки по горизонтали и вертикали */
+      border-radius: 10px;
+      /* Закругляем углы кнопки */
+      border: none;
+      /* Убираем границу кнопки */
+    }

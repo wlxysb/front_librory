@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="./styles/main.css">
   <title>Библиотека</title>
   <style>
 
@@ -33,7 +33,6 @@
 
 .product-item img {
     text-align: center;
-    display: block;
     width: 100%;
 }
 
@@ -69,139 +68,33 @@
 }
 
 .product-item:hover .button {
-    background: #fc5a5a;
+    background: #fc5a5a; 
 }
 
 .all_cards {
     list-style-type: none;
 }
 </style>
-
 </head>
 <body>
 
 <header >
-  <input type="checkbox" id="side-checkbox" />
-                    <div class="side-panel">
-                        <label class="side-button-2" for="side-checkbox">+</label>    
-                        <div class="side-title">Фильтры:</div>
-                        
+  <input type="checkbox" id="side-checkbox""/>
 
-
-
-
-
-
-                        <div class="container">
-                            <div class="dropdown" onmouseover="showDropdown1()" onmouseout="hideDropdown1()">
-                              <span>Жанры</span>
-                              <div class="dropdown-content" id="myDropdown1">
-                                <a href="#">Эпос</a>
-                                <a href="#">Драма</a>
-                                <a href="#">Лирика</a>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="container">
-                            <div class="dropdown" onmouseover="showDropdown2()" onmouseout="hideDropdown2()">
-                              <span>Авторы</span>
-                              <div class="dropdown-content" id="myDropdown2">
-                                <a href="#">Пушкин</a>
-                                <a href="#">Тургенев</a>
-                                <a href="#">Онегин</a>
-                              </div>
-                            </div>
-                          </div>
-
-
-
-
-
-
-                    </div>
-                    <div class="side-button-1-wr">
-                        <label class="side-button-1" for="side-checkbox">
-                            <div class="side-b side-open">ФИЛЬТРЫ</div>
-                            <div class="side-b side-close">ФИЛЬТРЫ</div>
-                        </label>
-                    </div>
-
-  <div id="searchBox">
-    <input type="text" placeholder="Поиск">
-  </div>
+  <form id="searchBox">
+    <input id="search" type="text" name="book_name" placeholder="Поиск">
+  </form>
   <div id="links">
-    <a href="login.html">АККАУНТ</a>
     
   </div>
 </header>
-
-
-
-<script>
-    function showDropdown1() {
-    document.getElementById("myDropdown1").style.display = "block";
-  }
-  
-  function hideDropdown1() {
-    document.getElementById("myDropdown1").style.display = "none";
-  }
-
-  function showDropdown2() {
-    document.getElementById("myDropdown2").style.display = "block";
-  }
-  
-  function hideDropdown2() {
-    document.getElementById("myDropdown2").style.display = "none";
-  }
-  
-  </script>
 
   <selecton class="content">
     <ul id="myList" class="all_cards">
 
     </ul>
   </selecton>
-
-<script type="application/javascript">
-
-  async function getResponse(url) {
-      let response = await fetch(url); //делаем запрос по адресу url
-      let content = await response.json(); //получаем данные и преобразуем их в json
-
-      var list = document.getElementById("myList"); //ищем элемент с id="myList"
-
-      content.forEach(function (b) {  //перебираем все элементы, которые к нам пришли от сервера
-          var listItem = document.createElement("li"); // добавляем к списку элемент li
-          listItem.className = 'card'; // Устанавливаем класс для элемента списка
-          //добавляем книгу и динамически вставляем элементы книги
-          listItem.innerHTML = `     
-<div class="product-item">
-<a href="book.html " id="book${b.id}" class="book_id">
-  <img id="img" src="${b.image_url}" style="height: 65%; width: 65%;">
-</a>
-  <div class="product-list">
-      <h3>${b.title}</h3>
-          <span class="price">${b.genre}</span>
-          <a href="" class="button">Забронировать</a>
-  </div>
-</div>
-`
-          list.appendChild(listItem);  //добавляем к списку книгу
-
-          //ищем элемент с id="book${b.id}" и добавляем ему событие.
-          //После делаем запрос к серверу на получание книги по ее id
-          document.getElementById(`book${b.id}`).addEventListener('click', function () {
-              let res = fetch(`http://localhost:5252/books/${b.id}`);
-          })
-
-      });
-
-  }
-  getResponse('http://localhost:5252/books');
-
-</script>
-<!-- <script src="main.js"></script> -->
+<script src="./jss/main.js"></script>
 </body>
 </html>
 
