@@ -24,6 +24,7 @@ form.addEventListener('submit', async function (event) {
         if (!response.ok) {
             throw new Error('Ошибка запроса: ' + response.status);
         }
+
         const responseData = await response.json();
         window.location.href = "main.html"
         console.log('Ответ от сервера:', responseData);
