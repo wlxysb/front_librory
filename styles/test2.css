@@ -1,0 +1,170 @@
+
+
+
+
+
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  background-repeat: no-repeat; 
+  background-color: #333333;
+  padding: 10px;
+  position: relative;
+}
+
+#menuButton {
+  cursor: pointer;
+  padding: 10px;
+}
+
+#searchBox input[type="text"] {
+  
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+}
+
+#links a {
+  margin-left: 50px;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#popupPanel {
+  background-color: #000;
+  color: #fff;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+}
+
+#popupPanel.show {
+  display: block;
+}
+
+#popupPanel a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.book{
+  width: 90%;
+  margin:auto;
+  padding-top: 3rem;
+}
+/* 
+.photo{
+  float: left;
+  width: 28%;
+} */
+
+.description{
+  /* float: left; */
+  /* width: 28%; */
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  /* margin-left: 3%; */
+}
+
+.bronirovat{
+  /* width: 22%;
+  float: left; */
+  margin-left: 3%;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.bron{
+  
+ background-color: lightgrey;
+ border-radius: 10px;
+ padding: 15px 30px;
+ font-size: 18px;
+ font-weight: bold;
+ cursor: pointer;
+}
+
+img{
+  height: 450px;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+@media all and (max-width: 490px){
+  header{
+    padding: 25px;
+  }
+  #searchBox input[type="text"] {
+    width: 150px;
+  }
+
+  .links{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .bronirovat{
+      border: 2px solid black;
+      padding: 5px;
+      border-radius: 10px;
+      align-items: center;
+      margin-top: 15px;
+  }
+
+  
+   .description{
+    margin-top: 15px;
+    }
+}
+
+
+@media all and (min-width: 500px){
+    .photo{
+      float: left;
+      width: 28%;
+    } 
+    .bronirovat{
+      width: 22%;
+      float: left;
+      margin-left: 5%;
+      border: 2px solid black;
+      padding: 5px;
+      border-radius: 10px;
+      align-items: center;
+    }
+    .description{
+      float: left; 
+       width: 28%;
+      border: 2px solid black;
+      padding: 5px;
+      border-radius: 10px;
+      margin-left: 5%;
+    }
+
+}
+
+
+
+
