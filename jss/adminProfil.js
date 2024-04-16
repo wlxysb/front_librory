@@ -31,29 +31,58 @@ forms.addEventListener('submit', async function (event) {
                 <p>Номер заказа: ${data.order_number} </p>
                 <p>Статус заказа: ${data.isActiveOrder}</p>
                 `
-                document.getElementById('buttGive').innerHTML = `
-                <button " class="btn">Отдать</button>
+
+                if (data.isActiveOrder == "АКТИВНЫЙ") {
+                    document.getElementById('buttGive').innerHTML = `
+                <button  class="btn">ЗАБРАТЬ</button>
                 `
-                var button = document.querySelector('.btn');
+                    var button = document.querySelector('.btn');
 
-                console.log(data.id, data.book.id, data.order_number)
+                    button.onclick = function () {
+                        withdrawBook(data.id);
+                    };
+                }
+                else {
+                    document.getElementById('buttGive').innerHTML = `
+                <button  class="btn">Отдать</button>
+                `
+                    var button = document.querySelector('.btn');
 
-                button.onclick = function () {
-                    giveBook(data.id, data.book.id, data.order_number);
-                };
+                    console.log(data.id, data.book.id, data.order_number)
 
+                    button.onclick = function () {
+                        giveBook(data.id, data.book.id, data.order_number);
+                    };
+                }
+
+                function withdrawBook(userId){
+                    fetch('http://localhost:8080/order/deleteActiveOrder', {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(userId)
+                    })
+                        .then(response => response.json())
+                        .then(data => console.log(data))
+                        alert(`Книга ${data.book.title}  успешно возвращена!`)
+                    location.reload()
+                }
 
                 function giveBook(userId, bookId, order_number) {
-                    res = {userId, bookId, order_number}
+                    res = { user: userId, book: bookId, order_number: order_number };
+                    console.log(JSON.stringify(res))
                     fetch('http://localhost:8080/order/activeOrder', {
                         method: "POST",
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.parse(res),
+                        body: JSON.stringify(res)
                     })
                         .then(response => response.json())
                         .then(data => console.log(data))
+                        alert(`Книга ${data.book.title} отдана ${data.username}`)
+                    location.reload()
                 }
             }
             else {

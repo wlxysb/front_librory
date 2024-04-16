@@ -15,13 +15,13 @@ fetch('http://localhost:8080/user/getUserInfo', {
         const list = document.getElementById("data-user")
 
         var listItem = document.createElement("li");
-        if(data.book != null){
-           if(data.isActiveOrder == "НЕАКТИВНЫЙ"){
-            const buttonItem = document.createElement("button")
-            buttonItem.innerHTML = "Отменить бронь"
-            buttonItem.setAttribute("oncLick", "deleteOrder()")
-            list.appendChild(buttonItem)
-           }
+        if (data.book != null) {
+            if (data.isActiveOrder == "НЕАКТИВНЫЙ") {
+                const buttonItem = document.createElement("button")
+                buttonItem.innerHTML = "Отменить бронь"
+                buttonItem.setAttribute("oncLick", "deleteOrder()")
+                list.appendChild(buttonItem)
+            }
         }
         listItem.className = 'card';
         listItem.innerHTML = `     
@@ -37,29 +37,29 @@ fetch('http://localhost:8080/user/getUserInfo', {
 `
         list.appendChild(listItem);
 
-        document.getElementById("discription-book").innerHTML = 
-        `
+        document.getElementById("discription-book").innerHTML =
+            `
         <h3>Покажите данные код библиотекарю: 
         <u><br>${data.order_number}</u></h3>
         `
 
-        if(data.activeOrder == 'АКТИВНЫЙ'){
+        if (data.isActiveOrder == 'АКТИВНЫЙ') {
             document.getElementById('isActiveOrder').innerHTML = `
                 <h3 style="color:green">Книга у вас!</h3>
             `
-        }else{
+        } else {
             document.getElementById('isActiveOrder').innerHTML = `
             <h3 style="color:red">Книга еще не у вас!</h3>
         `
-        // const buttonItem = document.createElement("button")
-        // buttonItem.innerHTML = "Отменить бронь"
-        // buttonItem.setAttribute("oncLick", "deleteOrder()")
-        // list.appendChild(buttonItem)
+            // const buttonItem = document.createElement("button")
+            // buttonItem.innerHTML = "Отменить бронь"
+            // buttonItem.setAttribute("oncLick", "deleteOrder()")
+            // list.appendChild(buttonItem)
         }
 
-})
+    })
 
-function deleteOrder(){
+function deleteOrder() {
     fetch("http://localhost:8080/order/deleteOrder", {
         method: 'POST',
         headers: {
@@ -67,13 +67,13 @@ function deleteOrder(){
             'Content-Type': 'application/json'
         }
     })
-    .then(res => {
-        if(res.ok){
-            window.location.href = "main.html"
-        }else{
-            alert("Во время отмены брони произошла ошибка")
-        }
-    })
+        .then(res => {
+            if (res.ok) {
+                window.location.href = "main.html"
+            } else {
+                alert("Во время отмены брони произошла ошибка")
+            }
+        })
 }
 
 
@@ -97,11 +97,11 @@ forms.addEventListener('submit', async function (event) {
     })
         .then(response => response.json())
         .then(b => {
-            if(b.status != 500){
+            if (b.status != 500) {
                 console.log(b)
                 window.location.href = `book.html?bookId=${b.id}`
             }
-            else{
+            else {
                 alert(`Книг, похожих на "${formData.get('book_name')}" не нашлось`)
             }
         })
