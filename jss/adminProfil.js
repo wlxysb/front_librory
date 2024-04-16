@@ -1,4 +1,4 @@
-const forms = document.getElementById("searchForm")
+const forms = document.getElementById("searchBox")
 forms.addEventListener('submit', async function (event) {
     event.preventDefault();
     const formData = new FormData(forms);
@@ -7,39 +7,56 @@ forms.addEventListener('submit', async function (event) {
     formData.forEach((value, key) => {
         jsonData[key] = value;
     });
-
-    fetch('http://localhost:4343/search/order', {
+    console.log(jsonData.orderNumber)
+    fetch('http://localhost:8080/search/order', {
         method: "POST",
         headers: {
-            'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token')).token,
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(jsonData)
+        body: jsonData.orderNumber
     })
         .then(response => response.json())
         .then(data => {
-            if(data.status != 500){
+            console.log(data)
+            if (data.status != 500) {
                 console.log(data)
 
-                document.getElementById('but').innerHTML 
+                document.getElementById('orderDisplayBox').innerHTML =
+                    `
+                <img src="${data.book.image_url}" class="framed-photo">
+                `
+                document.getElementById('custom-div').innerHTML = `
+                <p>Книга: ${data.book.title}</p>
+                <p>Получатель: ${data.username}</p>
+                <p>Номер заказа: ${data.order_number} </p>
+                <p>Статус заказа: ${data.isActiveOrder}</p>
+                `
+                document.getElementById('buttGive').innerHTML = `
+                <button " class="btn">Отдать</button>
+                `
+                var button = document.querySelector('.btn');
 
-                function giveBook(userId, bookId, order_number){
-                    fetch('http://localhost:4343/books/activeOrder', {
+                console.log(data.id, data.book.id, data.order_number)
+
+                button.onclick = function () {
+                    giveBook(data.id, data.book.id, data.order_number);
+                };
+
+
+                function giveBook(userId, bookId, order_number) {
+                    res = {userId, bookId, order_number}
+                    fetch('http://localhost:8080/order/activeOrder', {
                         method: "POST",
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: {
-                            "user": + userId,
-                            "book": + bookId,
-                            "order_number": + order_number
-                        }
+                        body: JSON.parse(res),
                     })
-                    .then(response => response.json())
-                    .then(data => console.log(data))
+                        .then(response => response.json())
+                        .then(data => console.log(data))
                 }
             }
-            else{
+            else {
                 alert(`Заказов с номером "${formData.get('order_name')}" не нашлось`)
             }
         })

@@ -9,7 +9,7 @@ async function getResponse(url) {
             <a href="login.html">АККАУНТ</a>
             `
     } else {
-        fetch('http://localhost:4343/books/checkRole', {
+        fetch('http://localhost:8080/user/checkRole', {
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token')).token,
@@ -21,7 +21,7 @@ async function getResponse(url) {
                 console.log(data)
                     if (data.role.name == 'ROLE_ADMIN') {
                         document.getElementById('links').innerHTML = `
-            <a href="adminProfil.html">АККАУНТ</a>
+            <a href="admin.html">АККАУНТ</a>
             `
                     } else {
                         document.getElementById('links').innerHTML = `
@@ -59,7 +59,7 @@ async function getResponse(url) {
         window.location.href = `book.html?bookId=${bookId}`
     }
 }
-getResponse('http://localhost:4343/books')
+getResponse('http://localhost:8080/books')
 
 
 const forms = document.getElementById("searchBox")
@@ -72,7 +72,7 @@ forms.addEventListener('submit', async function (event) {
         jsonData[key] = value;
     });
 
-    fetch('http://localhost:4343/search/book', {
+    fetch('http://localhost:8080/search/book', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'

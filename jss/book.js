@@ -19,7 +19,7 @@ else {
 }
 
 
-fetch(`http://localhost:4343/books/${bookId}`)
+fetch(`http://localhost:8080/books/${bookId}`)
     .then(res => res.json())
     .then(data => {
         opisanie.innerHTML = `
@@ -50,9 +50,11 @@ function checkToken(token) {
     }
 }
 
+console.log(JSON.parse(bookId))
+
 function createOrder(bookId) {
     const token = JSON.parse(localStorage.getItem('token')).token
-    fetch('http://localhost:4343/books/createOrder', {
+    fetch('http://localhost:8080/order/createOrder', {
         method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + token,
@@ -83,7 +85,7 @@ forms.addEventListener('submit', async function (event) {
         jsonData[key] = value;
     });
 
-    fetch('http://localhost:4343/search/book', {
+    fetch('http://localhost:8080/search/book', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'

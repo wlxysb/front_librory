@@ -1,55 +1,43 @@
 <!DOCTYPE html>
+
 <head>
   <meta charset="UTF-8">
-  <link rel ="stylesheet" href = "styles/test.css">
-  
+  <link rel="stylesheet" href="styles/admin.css">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Тест</title>
+
+  <title>АДМИН</title>
 </head>
 
 <body>
   <header>
     <p class="librorer">Школьный библиотекарь</p>
     <div id="links">
-      <a id = "glanaya" href="main.html">ГЛАВНАЯ</a>
+      <a id="glanaya" href="main.html">ГЛАВНАЯ</a>
     </div>
-
   </header>
 
+  <form id="searchBox">
+    <input type="text" name="orderNumber" placeholder="Поиск">
+  </form>
 
+  <button oncLick="loginout()" class="leaving">Выйти из аккаунта</button <div id="orderDisplay">
+  <div id="orderDisplayBox">
 
+  </div>
+  </div>
+  <div id="custom-div" class="custom-div">
 
-
-  <div id="searchBox">
-    <input type="text" placeholder="Поиск">
   </div>
 
-  <button oncLick="" class="leaving">Выйти из аккаунта</button
+  <span id="buttGive">
 
-
-  <div id="orderDisplay">
-    <div id ="orderDisplayBox">
-      <img src="отцы и дети.jpg"Описание изображения" class="framed-photo">
-    </div>
-  </div>
-  <div class="custom-div">
-    <p>Книга: Отцы и дети</p>
-    <p>Получатель: Настя Романова</p>
-    <p>Номер заказа: 696969 </p>
-    <p>Статус заказа: активен</p>
-  </div>
-
-  <button class="btn">Отдать</button>
-
-
-
-
-
-
-
-
-
-
-
+  </span>
+  <script src="./jss/adminProfil.js"></script>
+  <script>
+    function loginout() {
+      localStorage.clear();
+      window.location.href = "main.html"
+    }
+  </script>
 </body>

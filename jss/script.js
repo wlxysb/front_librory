@@ -10,7 +10,7 @@ form.addEventListener('submit', async function (event) {
         jsonData[key] = value;
     });
 
-    const url = 'http://localhost:4343/registration';
+    const url = 'http://localhost:8080/registration';
     const options = {
         method: 'POST',
         headers: {
@@ -44,7 +44,7 @@ forms.addEventListener('submit', async function (event) {
         jsonData[key] = value;
     });
 
-    fetch('http://localhost:4343/search/book', {
+    fetch('http://localhost:8080/search/book', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'

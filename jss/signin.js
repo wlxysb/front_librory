@@ -16,7 +16,7 @@ form.addEventListener('submit', async function (event) {
 	}
 
 
-	const url = 'http://localhost:4343/auth'
+	const url = 'http://localhost:8080/auth'
 	const obj = {}
 	const formData = new FormData(form);
 
@@ -42,7 +42,7 @@ form.addEventListener('submit', async function (event) {
 		localStorage.clear()
 		localStorage.setItem('token', JSON.stringify(answer))
 
-		fetch('http://localhost:4343/books/checkRole', {
+		fetch('http://localhost:8080/user/checkRole', {
 			method: 'GET',
 			headers: {
 				'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token')).token,
@@ -51,11 +51,12 @@ form.addEventListener('submit', async function (event) {
 		})
 			.then(response => response.json())
 			.then(data => {
+				
 				if(data.role.name == 'ROLE_ADMIN'){
-					location.href = "adminProfil.html";
+					location.href = "admin.html";
 				}
 				else{
-					location.href = 'main.html'
+					window.location.href = 'main.html'
 				}
 			})
 	} catch (error) {
@@ -73,7 +74,7 @@ forms.addEventListener('submit', async function (event) {
 		jsonData[key] = value;
 	});
 
-	fetch('http://localhost:4343/search/book', {
+	fetch('http://localhost:8080/search/book', {
 		method: "POST",
 		headers: {
 			'Content-Type': 'application/json'

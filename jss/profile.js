@@ -1,6 +1,5 @@
 const token = JSON.parse(localStorage.getItem('token')).token
-console.log(token)
-fetch('http://localhost:4343/books/getUserInfo', {
+fetch('http://localhost:8080/user/getUserInfo', {
     method: 'GET',
     headers: {
         'Authorization': 'Bearer ' + token,
@@ -17,10 +16,12 @@ fetch('http://localhost:4343/books/getUserInfo', {
 
         var listItem = document.createElement("li");
         if(data.book != null){
+           if(data.isActiveOrder == "НЕАКТИВНЫЙ"){
             const buttonItem = document.createElement("button")
             buttonItem.innerHTML = "Отменить бронь"
             buttonItem.setAttribute("oncLick", "deleteOrder()")
             list.appendChild(buttonItem)
+           }
         }
         listItem.className = 'card';
         listItem.innerHTML = `     
@@ -41,9 +42,25 @@ fetch('http://localhost:4343/books/getUserInfo', {
         <h3>Покажите данные код библиотекарю: 
         <u><br>${data.order_number}</u></h3>
         `
+
+        if(data.activeOrder == 'АКТИВНЫЙ'){
+            document.getElementById('isActiveOrder').innerHTML = `
+                <h3 style="color:green">Книга у вас!</h3>
+            `
+        }else{
+            document.getElementById('isActiveOrder').innerHTML = `
+            <h3 style="color:red">Книга еще не у вас!</h3>
+        `
+        // const buttonItem = document.createElement("button")
+        // buttonItem.innerHTML = "Отменить бронь"
+        // buttonItem.setAttribute("oncLick", "deleteOrder()")
+        // list.appendChild(buttonItem)
+        }
+
 })
+
 function deleteOrder(){
-    fetch("http://localhost:4343/books/deleteOrder", {
+    fetch("http://localhost:8080/order/deleteOrder", {
         method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + token,
@@ -59,6 +76,8 @@ function deleteOrder(){
     })
 }
 
+
+
 const forms = document.getElementById("searchBox")
 forms.addEventListener('submit', async function (event) {
     event.preventDefault();
@@ -69,7 +88,7 @@ forms.addEventListener('submit', async function (event) {
         jsonData[key] = value;
     });
 
-    fetch('http://localhost:4343/search/book', {
+    fetch('http://localhost:8080/search/book', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
