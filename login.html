@@ -2,71 +2,22 @@
 
 <head>
   <meta charset="UTF-8">
-
-  <link rel="stylesheet" href="login.css">
-
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="./styles/login.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>Логин</title>
 </head>
 
-
 <body>
 
-
   <header>
-    <input type="checkbox" id="side-checkbox" />
-    <div class="side-panel">
-      <label class="side-button-2" for="side-checkbox">+</label>
-      <div class="side-title">Фильтры:</div>
-
-
-
-
-
-
-
-      <div class="container">
-        <div class="dropdown" onmouseover="showDropdown1()" onmouseout="hideDropdown1()">
-          <span>Жанры</span>
-          <div class="dropdown-content" id="myDropdown1">
-            <a href="#">Эпос</a>
-            <a href="#">Драма</a>
-            <a href="#">Лирика</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="dropdown" onmouseover="showDropdown2()" onmouseout="hideDropdown2()">
-          <span>Авторы</span>
-          <div class="dropdown-content" id="myDropdown2">
-            <a href="#">Пушкин</a>
-            <a href="#">Тургенев</a>
-            <a href="#">Онегин</a>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-
-    </div>
-    <div class="side-button-1-wr">
-      <label class="side-button-1" for="side-checkbox">
-        <div class="side-b side-open">ФИЛЬТРЫ</div>
-        <div class="side-b side-close">ФИЛЬТРЫ</div>
-      </label>
-    </div>
-
-    <div id="searchBox">
-      <input type="text" placeholder="Поиск">
-    </div>
     <div id="links">
-      <a href="login.html">АККАУНТ</a>
       <a href="main.html">ГЛАВНАЯ</a>
     </div>
+    <form id="searchBox">
+      <input id="search" type="text" name="book_name" placeholder="Поиск">
+    </form>
+    
   </header>
 
   <div class="login">
@@ -81,38 +32,19 @@
           <label class="login-field-icon fui-user" for="login-name"></label>
         </div>
 
-
         <div class="control-group">
           <input type="text" class="login-field" name="password" placeholder="Пароль">
           <label class="login-field-icon fui-lock" for="login-password"></label>
         </div>
+        <h4 style="color: red;" id="error">
+          </h3>
 
-
-        <button class="btn btn-primary btn-large btn-block">ВОЙТИ</button>
-        <div class="registration">
-          <a href="regist.html">Зарегистрироваться</a>
-        </div>
+          <button class="btn btn-primary btn-large btn-block">ВОЙТИ</button>
+          <div class="registration">
+            <a href="regist.html">Зарегистрироваться</a>
+          </div>
       </div>
     </form>
   </div>
-
-  <script>
-    function showDropdown1() {
-      document.getElementById("myDropdown1").style.display = "block";
-    }
-
-    function hideDropdown1() {
-      document.getElementById("myDropdown1").style.display = "none";
-    }
-
-    function showDropdown2() {
-      document.getElementById("myDropdown2").style.display = "block";
-    }
-
-    function hideDropdown2() {
-      document.getElementById("myDropdown2").style.display = "none";
-    }
-  </script>
-  <script src="signin.js"></script>
-
+  <script src="./jss/signin.js"></script>
 </body>

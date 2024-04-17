@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/profile.css">
+    <title>Профиль</title>
+    <style>
+        .product-item {
+            width: 300px;
+            text-align: center;
+
+            border-bottom: 2px solid #F5F5F5;
+            background: white;
+            font-family: "Open Sans";
+            transition: .3s ease-in;
+        }
+
+        .product-item:hover {
+            border-bottom: 2px solid #fc5a5a;
+        }
+
+        .product-item img {
+            text-align: center;
+            width: 100%;
+        }
+
+        .product-list {
+            background: #fafafa;
+            padding: 15px 0;
+        }
+
+        .product-list h3 {
+            font-size: 18px;
+            font-weight: 400;
+            color: #2e2e2e;
+            margin: 0 0 10px 0;
+        }
+
+        .price {
+            font-size: 16px;
+            color: #fc5a5a;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .button {
+            text-decoration: none;
+            display: inline-block;
+            padding: 0 12px;
+            background: #cccccc;
+            color: white;
+            text-transform: uppercase;
+            font-size: 12px;
+            line-height: 28px;
+            transition: .3s ease-in;
+        }
+
+        .product-item:hover .button {
+            background: #fc5a5a;
+        }
+
+        .discription-book {
+            position: absolute;
+            top: 50px;
+            left: 10px;
+
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="links">
+            <a href="main.html">ГЛАВНАЯ</a>
+        </div>
+        <form id="searchBox">
+            <input id="search" type="text" name="book_name" placeholder="Поиск">
+        </form>
+        
+    </header>
+
+    <section class="content-profile-page">
+        <div class="profile-user-page card">
+            <div class="img-user-profile">
+                <!-- <img class="profile-bgHome" src="./styles/библиотека.jpg" /> -->
+                <img class="avatar" src="https://img.razrisyika.ru/kart/107/1200/424694-obraz-cheloveka-33.jpg" />
+            </div>
+            <button onclick="loginout()" id="signout">Выйти из аккаунта</button>
+            <div class="user-profile-data">
+                <h1 id="username"> </h1>
+                <p id="class_number"></p>
+            </div>
+            <div class="description-profile"> Это твой личный профиль, в котором ты можешь узнать информацию о своих
+                книгах! oijferjfuerinfejrinfejrnfekjrnf ferf erjnf erjnf erjfnerfn eriunfr frenfef erfnrf rf renfjernfkjenfjenrfj e jknfjre frjkfnf  ff nrje ferf</div>
+            <ul id="data-user" class="data-user">
+                <div id="discription-book" class="discription-book">
+                    
+                </div>
+                <div id="isActiveOrder">
+                    
+                </div>
+                <div id="abc">
+
+                </div>
+            </ul>
+        </div>
+    </section>
+</body>
+<script src="./jss/profile.js"></script>
+<script>
+    function loginout() {
+        localStorage.clear();
+        window.location.href = "main.html"
+    }
+</script>
+
+</html>

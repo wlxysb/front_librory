@@ -2,77 +2,24 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="stylesheet" href="regist.css">
+  <link rel="stylesheet" href="./styles/regist.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <link rel="stylesheet" href="main.css">
   <title>Регистрация</title>
 </head>
-
 
 <body>
 
 
   <header >
-    <input type="checkbox" id="side-checkbox" />
-                      <div class="side-panel">
-                          <label class="side-button-2" for="side-checkbox">+</label>    
-                          <div class="side-title">Фильтры:</div>
-                          
-  
-                            <div class="container">
-                              <div class="dropdown" onmouseover="showDropdown1()" onmouseout="hideDropdown1()">
-                                <span>Жанры</span>
-                                <div class="dropdown-content" id="myDropdown1">
-                                  <a href="#">Эпос</a>
-                                  <a href="#">Драма</a>
-                                  <a href="#">Лирика</a>
-                                </div>
-                              </div>
-                            </div>
-  
-                            <div class="container">
-                              <div class="dropdown" onmouseover="showDropdown2()" onmouseout="hideDropdown2()">
-                                <span>Авторы</span>
-                                <div class="dropdown-content" id="myDropdown2">
-                                  <a href="#">Пушкин</a>
-                                  <a href="#">Тургенев</a>
-                                  <a href="#">Онегин</a>
-                                </div>
-                              </div>
-                            </div>
-                      </div>
-                      <div class="side-button-1-wr">
-                          <label class="side-button-1" for="side-checkbox">
-                              <div class="side-b side-open">ФИЛЬТРЫ</div>
-                              <div class="side-b side-close">ФИЛЬТРЫ</div>
-                          </label>
-                      </div>
-  
-    <div id="searchBox">
-      <input type="text" placeholder="Поиск">
-    </div>
     <div id="links">
-      <a href="login.html">АККАУНТ</a>
       <a href="main.html">ГЛАВНАЯ</a>
-    </div>
+    </div>   
+    <form id="searchBox">
+      <input id="search" type="text" name="book_name" placeholder="Поиск">
+    </form>
+    
   </header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	<div class="registration">
 		<form class="registration-screen" id="registration-screenn">
@@ -96,11 +43,11 @@
         <div class="element1">
           <select name="class_number" id="class_number">
             <option value="Не выбрано">Не выбрано</option>
-            <option value="1А">1Б</option>
+            <option value="1А">1А</option>
             <option value="1Б">1Б</option>
-            <option value="2А">2Б</option>
-            <option value="2Б">2Б</option>
             <option value="2А">2А</option>
+            <option value="2Б">2Б</option>
+            <option value="3А">3А</option>
             <option value="3Б">3Б</option>
             <option value="4А">4А</option>
             <option value="4Б">4Б</option>
@@ -121,7 +68,7 @@
           </select>
         </div>
 
-				<button class="btn btn-primary btn-large btn-block">ВОЙТИ</button>
+				<button class="btn btn-primary btn-large btn-block">ЗАРЕГИСТРИРОВАТЬСЯ</button>
         <div class="login">
           <a href="login.html">Войти</a>
         </div>
@@ -129,29 +76,5 @@
 		</div>
 	</div>
 
-
-
-
-
-
-
-  <script>
-    function showDropdown1() {
-    document.getElementById("myDropdown1").style.display = "block";
-  }
-  
-  function hideDropdown1() {
-    document.getElementById("myDropdown1").style.display = "none";
-  }
-
-  function showDropdown2() {
-    document.getElementById("myDropdown2").style.display = "block";
-  }
-  
-  function hideDropdown2() {
-    document.getElementById("myDropdown2").style.display = "none";
-  }
-  
-  </script>
-  <script src="script.js"></script>
+  <script src="./jss/script.js"></script>
 </body>
