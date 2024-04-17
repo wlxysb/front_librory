@@ -1,0 +1,56 @@
+
+.framed-photo{
+  border-radius: 10px;
+  height: 500px;
+  margin-top: 30px;
+  margin-left: 90px;
+  box-shadow: 0 0 0 5px #000000;
+}
+
+.opisanie{
+  margin-left: 80px;
+  margin-top: 30px;
+  display: inline-block;
+  border: 2px solid black; /* Устанавливаем рамку блока */
+  padding: 5px;
+  height: 40%;
+  width: 40%;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.inline{
+  display: flex;
+}
+
+.framed-photo .opisanie {
+  flex: 1;
+}
+
+.harakteristika {
+  margin-left: 485px;
+  margin-top: -250px;
+  border: 2px solid black;
+  border-radius:10px ;
+  padding: 15px;
+  width: 20%;
+}
+
+.bronirovat{
+  margin-left: 850px;
+  margin-top: -185px;
+  border-radius:10px ;
+  padding: 10px;
+  width: 15%;
+}
+
+button {
+  background:linear-gradient(to right, #ff105e, #ca0520); /* Изменяем цвет фона на оранжевый */
+  color: white; /* Цвет текста на кнопке на белый */
+  padding: 15px 40px; /* Увеличиваем размеры кнопки по горизонтали и вертикали */
+  border-radius: 10px; /* Закругляем углы кнопки */
+  border: none; /* Убираем границу кнопки */
+}
+
+
+

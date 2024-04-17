@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
   }
@@ -11,11 +10,11 @@
   background-image: url('библиотека.jpg');
   padding: 50px;
   }
-  .login {
+  .registration {
   margin: 70px auto;
   width: 300px;
   }
-  .login-screen {
+  .registration-screen {
   background-color: #FFF;
   padding: 20px;
   border-radius: 10px
@@ -26,7 +25,7 @@
   color: #777;
   }
   
-  .login-form {
+  .registration-form {
   text-align: center;
   }
   .control-group {
@@ -74,7 +73,7 @@
     margin-top: 15px;
   }
 
-  .registration{
+  .login{
     color:#000000;
     padding-top: 10px;
   }
@@ -88,110 +87,4 @@
     color: #444;
     display: block;
     margin-top: 12px;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  header {
-    display: flex;
-    align-items: center;
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    background-color: #333333;
-    padding: 10px;
-    position: relative;
-  }
-  
-  
-  body {
-    margin: 0;
-    padding: 0;
-  
-    
-    font-family: Arial;
-    background-image: url('библиотека.jpg');
-  }
-  
-  #menuButton {
-    cursor: pointer;
-    padding: 10px;
-  }
-  
-  #searchBox input[type="text"] {
-    border-radius: 10px;
-    border: none;
-  }
-  
-  #links a {
-    margin-left: 50px;
-    color: #fff;
-    text-decoration: none;
-    font-family: 'Times New Roman', Times, serif;
-  }
-  
-  #popupPanel {
-    background-color: #000;
-    color: #fff;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: none;
-  }
-  
-  #popupPanel.show {
-    display: block;
-  }
-  
-  #popupPanel a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #fff;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  @media all and (max-width: 490px){
-    header{
-      padding: 25px;
-    }
-
-    #searchBox input[type="text"] {
-      width: 150px;
-    }
-
-    .links{
-      margin-left:auto;
-      margin-right:auto;
-    }
   }
