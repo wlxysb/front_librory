@@ -1,95 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="stylesheet" href="./styles/main.css">
-  <title>Библиотека</title>
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.all_cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    /* Расстояние между элементами */
-    justify-content: center;
-    /* Центрирование элементов по горизонтали */
-}
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>Библиотека</title>
+    <style>
+        .all_cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            /* Расстояние между элементами */
+            justify-content: center;
+            /* Центрирование элементов по горизонтали */
+        }
 
-.product-item {
-    width: 300px;
-    text-align: center;
-    margin: 0 auto;
-    border-bottom: 2px solid #F5F5F5;
-    background: white;
-    font-family: "Open Sans";
-    transition: .3s ease-in;
-}
+        .product-item {
+            width: 300px;
+            text-align: center;
+            margin: 0 auto;
+            border-bottom: 2px solid #F5F5F5;
+            background: white;
+            font-family: "Open Sans";
+            transition: .3s ease-in;
+        }
 
-.product-item:hover {
-    border-bottom: 2px solid #fc5a5a;
-}
+        .product-item:hover {
+            border-bottom: 2px solid #fc5a5a;
+        }
 
-.product-item img {
-    text-align: center;
-    width: 100%;
-}
+        .product-item img {
+            text-align: center;
+            width: 100%;
+        }
 
-.product-list {
-    background: #fafafa;
-    padding: 15px 0;
-}
+        .product-list {
+            background: #fafafa;
+            padding: 15px 0;
+        }
 
-.product-list h3 {
-    font-size: 18px;
-    font-weight: 400;
-    color: #2e2e2e;
-    margin: 0 0 10px 0;
-}
+        .product-list h3 {
+            font-size: 18px;
+            font-weight: 400;
+            color: #2e2e2e;
+            margin: 0 0 10px 0;
+        }
 
-.price {
-    font-size: 16px;
-    color: #fc5a5a;
-    display: block;
-    margin-bottom: 12px;
-}
+        .price {
+            font-size: 16px;
+            color: #fc5a5a;
+            display: block;
+            margin-bottom: 12px;
+        }
 
-.button {
-    text-decoration: none;
-    display: inline-block;
-    padding: 0 12px;
-    background: #cccccc;
-    color: white;
-    text-transform: uppercase;
-    font-size: 12px;
-    line-height: 28px;
-    transition: .3s ease-in;
-}
+        .button {
+            text-decoration: none;
+            display: inline-block;
+            padding: 0 12px;
+            background: #cccccc;
+            color: white;
+            text-transform: uppercase;
+            font-size: 12px;
+            line-height: 28px;
+            transition: .3s ease-in;
+        }
 
-.product-item:hover .button {
-    background: #fc5a5a; 
-}
+        .product-item:hover .button {
+            background: #fc5a5a;
+        }
 
-.all_cards {
-    list-style-type: none;
-}
-</style>
+        .all_cards {
+            list-style-type: none;
+        }
+    </style>
 </head>
+
 <body>
 
-<header >
-  </div>
-  <form id="searchBox">
-    <input id="search" type="text" name="book_name" placeholder="Поиск">
-  </form></header>
+    <header>
+        <div id="links">
 
-  <selecton class="content">
-    <ul id="myList" class="all_cards">
+        </div>
+        <form id="searchBox">
+            <input id="search" type="text" name="book_name" placeholder="Поиск">
+        </form>
+    </header>
 
-    </ul>
-  </selecton>
-<script src="./jss/main.js"></script>
+    <selecton class="content">
+        <ul id="myList" class="all_cards">
+
+        </ul>
+    </selecton>
+    <script src="./jss/main.js"></script>
 </body>
 </html>
-

@@ -1,20 +1,19 @@
 const urlParams = new URLSearchParams(window.location.search);
 const bookId = urlParams.get('bookId');
-const opisanie = document.getElementById('opisanie')
-const framed_photo = document.getElementById('framed-photo')
-const characteristic = document.getElementById('characteristic')
-const book = document.getElementById('book')
+const opisanie = document.getElementById('description')
+const framed_photo = document.getElementById('photo')
+const book = document.getElementById('bronirovat')
 
 if (localStorage.getItem('token') == null) {
     document.getElementById('links').innerHTML = `
     <a href="login.html">АККАУНТ</a>
-    <a href="main.html">ГЛАВНАЯ</a>
+    <a id="glavnaya" href="main.html">ГЛАВНАЯ</a>
     `
 }
 else {
     document.getElementById('links').innerHTML = `
     <a href="profile.html">АККАУНТ</a>
-    <a href="main.html">ГЛАВНАЯ</a>
+    <a id="glavnaya" href="main.html">ГЛАВНАЯ</a>
     `
 }
 
@@ -22,21 +21,23 @@ else {
 fetch(`http://localhost:8080/books/${bookId}`)
     .then(res => res.json())
     .then(data => {
+        console.log(data)
         opisanie.innerHTML = `
-    <h3>${data.description}</h3>
+        <p class ="opisanie">
+        ${data.description}</p>
+        <p>Жанр: ${data.genre}</p>
+        <p>Год издания: ${data.year_published}</p>
+        <p>Кол-во в наличии: ${data.quantity}</p>
+        </p>
     `;
         framed_photo.innerHTML = `
-    <img src="${data.image_url}"  class="framed-photo">
+        <img src="${data.image_url}" class="img-book">
     `;
-        characteristic.innerHTML = `
-    <p>-Название: ${data.title}</p>
-    <p>-Год написание: ${data.year_published}</p>
-    <p>-Жанр: ${data.genre}</p>
-    <p>-Кол-во в библиотеке: ${data.quantity}</p>
-    `;
-        book.innerHTML = `${data.title}`
+        document.getElementById('bookname').innerHTML = `
+        <h3>${data.title}</h3>
+        `;
 
-        document.getElementById('bookAbook')
+        document.getElementById('bronirovat')
             .addEventListener('click', function () {
                 checkToken(localStorage.getItem('token'))
             })
